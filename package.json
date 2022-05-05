@@ -1,0 +1,35 @@
+{
+  "name": "tailwind-admin-panel",
+  "version": "1.0.0",
+  "description": "An admin panel using Tailwind CSS",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "npx tailwindcss -i ./src/assets/css/tailwind.css -o ./public/css/style.css --watch",
+    "build": "npx tailwindcss -i ./src/assets/css/tailwind.css -o ./public/css/style.min.css --minify"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fahadchy24/tailwind-admin-panel.git"
+  },
+  "keywords": [
+    "html",
+    "css",
+    "js",
+    "jquery",
+    "tailwindcss",
+    "admin",
+    "dashboard",
+    "login",
+    "register"
+  ],
+  "author": "Fahad Chowdhury <fahadchy24@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/fahadchy24/tailwind-admin-panel/issues"
+  },
+  "homepage": "https://github.com/fahadchy24/tailwind-admin-panel#readme",
+  "devDependencies": {
+    "tailwindcss": "^3.0.24"
+  }
+}
