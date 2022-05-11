@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="css/fontawesome/css/all.min.css">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap"
+        rel="stylesheet">
+
+    <!-- Style -->
+    <link href="css/style.css" rel="stylesheet">
+</head>
+
+<body class="font-roboto text-gray-800 overflow-x-hidden">
+
+    <div class="grid grid-cols-8">
+        <!-- Start Left Side Navbar  -->
+        <aside class="sidebar w-max-[260px] col-span-1 h-screen bg-slate-800 shadow transition">
+            <img src="./images/logo.png" alt="logo-mini"
+                class="p-2 bg-[#F4F6F9] min-h-[70px] border border-r-black md:w-full w-fit">
+            <!-- <ul class="mt-4 pl-6">
+                <li class="">
+                    <h3 class="text-slate-500 text-sm uppercase">Navigation</h3>
+                    <div class="text-slate-50 mt-4 transition relative">
+                        <a href="#" class="dropdown-btn block text-slate-50 transition">
+                            Dashboard
+                            <span class="absolute text-sm rounded-md bg-[#28A745] w-5 h-5 ml-16 mt-[1px] p-[1px] text-center">4</span>
+                        </a>
+                        <ul class="list-none text-white ml-8 dropdown-container  hidden transition">
+                            <li class="">
+                                <a href="#" class="text-slate-500 hover:text-slate-50 transition">
+                                    Analytics
+                                </a>
+                            </li>
+                            <li class="">
+                                <a href="#" class="text-slate-500 hover:text-slate-50 transition">
+                                    Ecommerce
+                                </a>
+                            </li>
+                            <li class="">
+                                <a href="#" class="text-slate-500 hover:text-slate-50 transition">
+                                    Projects
+                                </a>
+                            </li>
+                            <li class="">
+                                <a href="#" class="text-slate-500 hover:text-slate-50 transition">
+                                    Wallets
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+            </ul> -->
+            <ul id="accordion" class="accordion mt-4 pl-6">
+                <li>
+                    <h3 class="text-slate-500 text-sm uppercase">Navigation</h3>
+                </li>
+                <li class="nav-menu mt-5 pl-6">
+                    <div class="pl-2 item cursor-pointer block relative">
+                        <a href="#" class="block text-slate-500 hover:text-slate-50 transition">
+                            <i class="fas fa-home absolute top-[2px] -left-6 transition"></i>
+                            Dashboard
+                            <span
+                                class="absolute text-sm rounded-md bg-[#28A745] w-5 h-5 ml-16 mt-[1px] p-[1px] text-center">4</span>
+                        </a>
+                    </div>
+                    <ul class="subItems hidden">
+                        <li class="">
+                            <a href="#" class="text-slate-500 hover:text-slate-50 block">
+                                Analytics
+                            </a>
+                        </li>
+                        <li class="">
+                            <a href="#" class="text-slate-500 hover:text-slate-50 transition">
+                                Ecommerce
+                            </a>
+                        </li>
+                        <li class="">
+                            <a href="#" class="text-slate-500 hover:text-slate-50 transition">
+                                Projects
+                            </a>
+                        </li>
+                        <li class="">
+                            <a href="#" class="text-slate-500 hover:text-slate-50 transition">
+                                Wallets
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="mt-5">
+                    <h3 class="text-slate-500 text-sm uppercase">Apps</h3>
+                </li>
+                <li class="nav-menu mt-5 relative cursor-pointer group transition">
+                    <a href="#" class="block text-slate-500 group-hover:text-slate-50 transition">
+                        <i class="fa-solid fa-calendar-days group-hover:text-slate-50 text-slate-500 mr-4 transition"></i>
+                        Calender
+                    </a>
+                </li>
+                <li class="nav-menu mt-5 relative cursor-pointer group transition">
+                    <a href="#" class="block text-slate-500 group-hover:text-slate-50 transition">
+                        <i class="fa-solid fa-message group-hover:text-slate-50 text-slate-500 mr-4 transition"></i>
+                        Chat
+                    </a>
+                </li>
+            </ul>
+        </aside>
+        <!-- End Left Side Navbar -->
+
+        <!-- Start Main Content -->
+        <div class="main-content col-span-7 bg-[#F4F6F9] dark:bg-slate-800 mx-10 py-4">
+            <!-- Start Top Header -->
+            <nav class="flex justify-between">
+                <div class="flex justify-center items-center">
+                    <div class="cursor-pointer">
+                        <span class="navbar-toggle text-slate-900">
+                            <i class="fa-solid fa-bars text-lg" id="toggle-icon"></i>
+                        </span>
+                    </div>
+                    <div class="block relative ml-3">
+                        <span class="absolute top-0 left-2 p-2">
+                            <i class="fa-solid fa-magnifying-glass text-sm text-slate-500"></i>
+                        </span>
+                        <input type="search"
+                            class="transition min-w-[260px] rounded-l p-2 pl-12 bg-[#F1F3FA] outline-none text-sm placeholder:text-slate-400"
+                            placeholder="Search...">
+                    </div>
+                    <div
+                        class="bg-[#727CF5] px-3 p-2 rounded-r  font-normal text-slate-50 cursor-pointer hover:bg-[#6169D0] transition">
+                        Search
+                    </div>
+                </div>
+                <div class="flex justify-center items-center pr-4 md:pr-0">
+                    <ul class="list-none">
+                        <li class="inline-block mx-4 md:mx-4 group">
+                            <div class="flex justify-center items-center">
+                                <img src="./images/flags/us-flag.jpg" alt="us-flag" class="h-3 mr-3">
+                                <a href="#" class="text-sm text-gray-500 group-hover:opacity-75 flex items-center">
+                                    English
+                                    <i class="fa-solid fa-chevron-down ml-2"></i>
+                                </a>
+                            </div>
+                        </li>
+                        <li class="inline-block mx-4 md:mx-6 relative group">
+                            <a href="#" class="text-xl text-gray-500 group-hover:opacity-75">
+                                <span
+                                    class="absolute -top-2 bg-red-500 -right-3.5 text-white pl-1.5 text-sm rounded-full h-5 w-5">
+                                    2
+                                </span>
+                                <i class="fa-solid fa-bell"></i>
+                            </a>
+                        </li>
+                    </ul>
+                    <div class="hidden md:block -mt-3 mx-3 group">
+                        <a href="#"
+                            class="text-xl text-gray-500 group-hover:opacity-75 rounded-full h-5 w-5 shadow py-1.5 px-2.5">
+                            <i class="fa-solid fa-user"></i>
+                        </a>
+                    </div>
+                </div>
+            </nav>
+            <!-- End Top Header -->
+
+            <!-- Start Main Content -->
+            <!-- <main></main> -->
+            <!-- End Main Content -->
+
+            <!-- Start Footer -->
+            <!-- <footer></footer> -->
+            <!-- End Footer -->
+        </div>
+        <!-- End Main Content -->
+    </div>
+
+
+
+
+
+    <!-- Scripts -->
+
+    <!-- Jquery -->
+    <script src="./js/vendors/jquery/jquery-3.6.0.min.js"></script>
+
+    <!-- Custom Script -->
+    <script src="./js/main.js"></script>
+</body>
+
+</html>

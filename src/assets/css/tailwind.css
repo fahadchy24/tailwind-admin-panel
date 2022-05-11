@@ -1,3 +1,14 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+@layer components {
+
+    /* Add an active class to the active dropdown button */
+    .active a {
+        /* background-color: black; */
+        color: white;
+    }
+
+}
