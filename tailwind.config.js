@@ -1,9 +1,13 @@
 module.exports = {
   content: ["./public/**/*.{html,js}"],
+  darkMode: 'class',
   theme: {
     extend: {
       fontFamily: {
-        'roboto': ['Roboto', 'sans-serif'],
+        'nunito': ['Nunito', 'sans-serif'],
+      },
+      container: {
+        padding: '2rem'
       },
     },
   },

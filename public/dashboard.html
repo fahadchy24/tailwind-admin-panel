@@ -13,31 +13,40 @@
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap"
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;500;600;700;800&display=swap"
         rel="stylesheet">
+
+    <!-- Datatable CSS -->
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.11.5/css/jquery.dataTables.min.css">
 
     <!-- Style -->
     <link href="css/style.css" rel="stylesheet">
 </head>
 
-<body class="font-roboto text-gray-800 overflow-x-hidden">
-
-    <div class="grid grid-cols-8">
+<body class="font-nunito bg-[#F3F4F7] dark:bg-slate-800 text-gray-800 dark:text-slate-50 overflow-x-hidden">
+    <div id="bg-overlay"></div>
+    <div class="md:grid md:grid-cols-8">
         <!-- Start Left Side Navbar  -->
-        <aside class="sidebar w-max-[260px] col-span-1 h-screen bg-slate-800 shadow transition">
-            <img src="./images/logo.png" alt="logo-mini"
-                class="p-2 bg-[#F4F6F9] min-h-[70px] border border-r-black md:w-full w-fit">
-            <!-- <ul class="mt-4 pl-6">
-                <li class="">
-                    <h3 class="text-slate-500 text-sm uppercase">Navigation</h3>
-                    <div class="text-slate-50 mt-4 transition relative">
-                        <a href="#" class="dropdown-btn block text-slate-50 transition">
-                            Dashboard
-                            <span class="absolute text-sm rounded-md bg-[#28A745] w-5 h-5 ml-16 mt-[1px] p-[1px] text-center">4</span>
-                        </a>
-                        <ul class="list-none text-white ml-8 dropdown-container  hidden transition">
+        <aside class="col-span-1 hidden md:block w-max-[260px] min-h-screen bg-slate-800 dark:bg-slate-700 shadow transition">
+            <div class="fixed">
+                <img src="./images/logo.png" alt="logo-mini"
+                    class="p-2 bg-[#F4F6F9] dark:bg-gray-500 w-full max-h-[110px] border-r-black dark:border-none">
+                <ul id="accordion" class="accordion mt-4 pl-6">
+                    <li>
+                        <h3 class="text-slate-500 font-semibold text-sm uppercase">Navigation</h3>
+                    </li>
+                    <li class="nav-menu mt-5 pl-6">
+                        <div class="pl-2 item cursor-pointer block relative">
+                            <a href="#" class="nav-item block text-slate-500 hover:text-slate-50 transition">
+                                <i class="fas fa-home absolute top-[2px] -left-6 transition"></i>
+                                Dashboard
+                                <span
+                                    class="absolute text-sm rounded-md bg-[#28A745] text-slate-50 w-5 h-5 ml-16 mt-px p-px text-center">4</span>
+                            </a>
+                        </div>
+                        <ul class="subItems hidden">
                             <li class="">
-                                <a href="#" class="text-slate-500 hover:text-slate-50 transition">
+                                <a href="#" class="text-slate-500 hover:text-slate-50 block">
                                     Analytics
                                 </a>
                             </li>
@@ -57,80 +66,44 @@
                                 </a>
                             </li>
                         </ul>
-                    </div>
-                </li>
-            </ul> -->
-            <ul id="accordion" class="accordion mt-4 pl-6">
-                <li>
-                    <h3 class="text-slate-500 text-sm uppercase">Navigation</h3>
-                </li>
-                <li class="nav-menu mt-5 pl-6">
-                    <div class="pl-2 item cursor-pointer block relative">
-                        <a href="#" class="block text-slate-500 hover:text-slate-50 transition">
-                            <i class="fas fa-home absolute top-[2px] -left-6 transition"></i>
-                            Dashboard
-                            <span
-                                class="absolute text-sm rounded-md bg-[#28A745] w-5 h-5 ml-16 mt-[1px] p-[1px] text-center">4</span>
+                    </li>
+                    <li class="mt-5">
+                        <h3 class="text-slate-500 font-semibold text-sm  uppercase">Apps</h3>
+                    </li>
+                    <li class="nav-menu mt-5 relative cursor-pointer group transition">
+                        <a href="#" class="nav-item block text-slate-500 group-hover:text-slate-50 transition">
+                            <i
+                                class="fa-solid fa-calendar-days group-hover:text-slate-50 text-slate-500 mr-4 transition"></i>
+                            Calender
                         </a>
-                    </div>
-                    <ul class="subItems hidden">
-                        <li class="">
-                            <a href="#" class="text-slate-500 hover:text-slate-50 block">
-                                Analytics
-                            </a>
-                        </li>
-                        <li class="">
-                            <a href="#" class="text-slate-500 hover:text-slate-50 transition">
-                                Ecommerce
-                            </a>
-                        </li>
-                        <li class="">
-                            <a href="#" class="text-slate-500 hover:text-slate-50 transition">
-                                Projects
-                            </a>
-                        </li>
-                        <li class="">
-                            <a href="#" class="text-slate-500 hover:text-slate-50 transition">
-                                Wallets
-                            </a>
-                        </li>
-                    </ul>
-                </li>
-                <li class="mt-5">
-                    <h3 class="text-slate-500 text-sm uppercase">Apps</h3>
-                </li>
-                <li class="nav-menu mt-5 relative cursor-pointer group transition">
-                    <a href="#" class="block text-slate-500 group-hover:text-slate-50 transition">
-                        <i class="fa-solid fa-calendar-days group-hover:text-slate-50 text-slate-500 mr-4 transition"></i>
-                        Calender
-                    </a>
-                </li>
-                <li class="nav-menu mt-5 relative cursor-pointer group transition">
-                    <a href="#" class="block text-slate-500 group-hover:text-slate-50 transition">
-                        <i class="fa-solid fa-message group-hover:text-slate-50 text-slate-500 mr-4 transition"></i>
-                        Chat
-                    </a>
-                </li>
-            </ul>
+                    </li>
+                    <li class="nav-menu mt-5 relative cursor-pointer group transition">
+                        <a href="#" class="nav-item block text-slate-500 group-hover:text-slate-50 transition">
+                            <i class="fa-solid fa-message group-hover:text-slate-50 text-slate-500 mr-4 transition"></i>
+                            Chat
+                        </a>
+                    </li>
+                </ul>
+            </div>
         </aside>
         <!-- End Left Side Navbar -->
 
         <!-- Start Main Content -->
-        <div class="main-content col-span-7 bg-[#F4F6F9] dark:bg-slate-800 mx-10 py-4">
+        <div class="col-span-7">
             <!-- Start Top Header -->
-            <nav class="flex justify-between">
+            <nav class="flex flex-col md:flex-row md:justify-between bg-white dark:bg-slate-700 p-4">
                 <div class="flex justify-center items-center">
                     <div class="cursor-pointer">
-                        <span class="navbar-toggle text-slate-900">
-                            <i class="fa-solid fa-bars text-lg" id="toggle-icon"></i>
+                        <span class="navbar-toggle text-slate-900 dark:text-slate-50">
+                            <i class="fa-solid fa-bars text-lg" id="nav-toggle"></i>
                         </span>
                     </div>
                     <div class="block relative ml-3">
                         <span class="absolute top-0 left-2 p-2">
-                            <i class="fa-solid fa-magnifying-glass text-sm text-slate-500"></i>
+                            <i class="fa-solid fa-magnifying-glass text-sm text-slate-500 dark:text-slate-300"></i>
                         </span>
                         <input type="search"
-                            class="transition min-w-[260px] rounded-l p-2 pl-12 bg-[#F1F3FA] outline-none text-sm placeholder:text-slate-400"
+                            class="transition min-w-[260px] rounded-l p-2 pl-12 bg-[#F1F3FA] dark:bg-slate-500 outline-none text-sm placeholder:text-slate-400 dark:placeholder:text-slate-300"
                             placeholder="Search...">
                     </div>
                     <div
@@ -138,30 +111,40 @@
                         Search
                     </div>
                 </div>
-                <div class="flex justify-center items-center pr-4 md:pr-0">
-                    <ul class="list-none">
+                <div class="flex justify-center items-center pr-4 md:pr-0 ">
+                    <ul class="list-none ">
                         <li class="inline-block mx-4 md:mx-4 group">
                             <div class="flex justify-center items-center">
                                 <img src="./images/flags/us-flag.jpg" alt="us-flag" class="h-3 mr-3">
-                                <a href="#" class="text-sm text-gray-500 group-hover:opacity-75 flex items-center">
+                                <a href="#" class="text-sm text-gray-500 dark:text-slate-300 group-hover:opacity-75 flex items-center">
                                     English
                                     <i class="fa-solid fa-chevron-down ml-2"></i>
                                 </a>
                             </div>
                         </li>
                         <li class="inline-block mx-4 md:mx-6 relative group">
-                            <a href="#" class="text-xl text-gray-500 group-hover:opacity-75">
+                            <a href="#" class="text-xl text-gray-500 dark:text-slate-300 group-hover:opacity-75">
                                 <span
-                                    class="absolute -top-2 bg-red-500 -right-3.5 text-white pl-1.5 text-sm rounded-full h-5 w-5">
+                                    class="absolute -top-2 bg-red-500 -right-3.5 text-slate-50 pl-1.5 text-sm font-bold rounded-full h-5 w-5">
                                     2
                                 </span>
                                 <i class="fa-solid fa-bell"></i>
                             </a>
                         </li>
+                        <li class="inline-block mx-4 md:mx-6 relative group">
+                            <a href="#" class="text-xl text-gray-500 dark:text-slate-300 group-hover:opacity-75">
+                                <i class="fa-solid fa-grip"></i>
+                            </a>
+                        </li>
+                        <li class="inline-block mx-4 md:mx-6 relative group">
+                            <a href="#" class="sidebar-toggle text-xl text-gray-500 dark:text-slate-300 group-hover:opacity-75 transition">
+                                <i class="fa-solid fa-gear" id="toggle-icon"></i>
+                            </a>
+                        </li>
                     </ul>
                     <div class="hidden md:block -mt-3 mx-3 group">
                         <a href="#"
-                            class="text-xl text-gray-500 group-hover:opacity-75 rounded-full h-5 w-5 shadow py-1.5 px-2.5">
+                            class="text-xl text-gray-500 dark:text-slate-300 group-hover:opacity-75 rounded-full h-5 w-5 shadow py-1.5 px-2.5">
                             <i class="fa-solid fa-user"></i>
                         </a>
                     </div>
@@ -170,24 +153,363 @@
             <!-- End Top Header -->
 
             <!-- Start Main Content -->
-            <!-- <main></main> -->
-            <!-- End Main Content -->
+            <main class="flex-auto mx-6">
+                <div class="flex flex-col">
+                    <div class="mt-6 flex justify-between">
+                        <div class="page-title">
+                            <h2 class="text-xl font-bold text-slate-500">Dashboard</h2>
+                        </div>
+                        <div class="hidden md:block">
+                            <div class="flex">
+                                <input type="text" value="" placeholder="11/05/2021"
+                                    class="transition bg-[#F0F2F9] p-2 border rounded-l outline-none shadow">
+                                <a
+                                    class="px-4 bg-blue-500 rounded-r mr-1 cursor-pointer flex items-center justify-center">
+                                    <i class="fa-regular fa-calendar-minus text-slate-50"></i>
+                                </a>
+                                <a
+                                    class="px-4 bg-blue-500 rounded cursor-pointer flex items-center justify-center mr-1">
+                                    <i class="fa-solid fa-rotate text-slate-50"></i>
+                                </a>
+                                <a class="px-4 bg-blue-500 rounded cursor-pointer flex items-center justify-center">
+                                    <i class="fa-solid fa-filter text-slate-50"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="grid grid-cols-1 md:grid-cols-3 h-auto md:min-h-[200px] gap-x-4 py-4">
+                            <div class="col-span-1">
+                                <div class="grid grid-cols-1 md:grid-cols-2 content-center gap-3">
+                                    <div
+                                        class="bg-slate-50 dark:bg-slate-700 p-6 flex flex-col md:flex-row justify-between rounded shadow-sm">
+                                        <div>
+                                            <div class="text-slate-400 dark:text-slate-400">Customers</div>
+                                            <div class="font-bold text-2xl text-slate-500 mt-8 dark:text-slate-300">36,254</div>
+                                            <div class="mt-8">
+                                                <i class="fa-solid fa-arrow-up text-green-700 text-sm font-bold"></i>
+                                                <span class="text-green-700 text-sm ">5.27%</span>
+                                                <span class="text-slate-400 ml-3">Since last month</span>
+                                            </div>
+                                        </div>
+                                        <div>
+                                            <i
+                                                class="fa-solid fa-user-group bg-[#DBDEFD] text-[#727CF5] text-sm p-3 rounded-sm"></i>
+                                        </div>
+                                    </div>
+                                    <div class="bg-slate-50 dark:bg-slate-700 p-6 flex justify-between rounded shadow-sm">
+                                        <div>
+                                            <div class="text-slate-400 dark:text-slate-400">Orders</div>
+                                            <div class="font-bold text-2xl text-slate-500 dark:text-slate-300 mt-8">5,543</div>
+                                            <div class="mt-8">
+                                                <i class="fa-solid fa-arrow-down text-red-500 text-sm font-bold"></i>
+                                                <span class="text-red-600 dark:text-red text-sm ">1.08%</span>
+                                                <span class="text-slate-400 ml-3">Since last month</span>
+                                            </div>
+                                        </div>
+                                        <div>
+                                            <i
+                                                class="fa-solid fa-user-group bg-[#DBDEFD] text-[#727CF5] text-sm p-3 rounded-sm"></i>
+                                        </div>
+                                    </div>
+                                    <div class="bg-slate-50 dark:bg-slate-700 p-6 flex justify-between rounded shadow-sm">
+                                        <div>
+                                            <div class="text-slate-400 dark:text-slate-400">Revenue</div>
+                                            <div class="font-bold text-2xl text-slate-500 dark:text-slate-300 mt-8">$6,254</div>
+                                            <div class="mt-8">
+                                                <i class="fa-solid fa-arrow-down text-red-500 text-sm font-bold"></i>
+                                                <span class="text-red-500 text-sm">7.00%</span>
+                                                <span class="text-slate-400 ml-3">Since last month</span>
+                                            </div>
+                                        </div>
+                                        <div>
+                                            <i
+                                                class="fa-solid fa-user-group bg-[#DBDEFD] text-[#727CF5] text-sm p-3 rounded-sm"></i>
+                                        </div>
+                                    </div>
+                                    <div class="bg-slate-50 dark:bg-slate-700 p-6 flex justify-between rounded shadow-sm">
+                                        <div>
+                                            <div class="text-slate-400 dark:text-slate-400">Growth</div>
+                                            <div class="font-bold text-2xl text-slate-500 dark:text-slate-300 mt-8">+ 30.56%</div>
 
-            <!-- Start Footer -->
-            <!-- <footer></footer> -->
-            <!-- End Footer -->
+                                            <div class="mt-8">
+                                                <i class="fa-solid fa-arrow-up text-green-700 text-sm font-bold"></i>
+                                                <span class="text-green-700 text-sm ">4.87%</span>
+                                                <span class="text-slate-400 ml-3">Since last month</span>
+                                            </div>
+                                        </div>
+                                        <div>
+                                            <i
+                                                class="fa-solid fa-user-group bg-[#DBDEFD] text-[#727CF5] text-sm p-3 rounded-sm"></i>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                            <div class="col-span-2">
+                                <div class="flex flex-col p-4 bg-white dark:bg-slate-700 rounded shadow-sm">
+                                    <b class="flex flex-col text-gray-50 dark:text-slate-400 uppercase">PROJECTIONS VS ACTUALS</b>
+                                    <canvas id="myChart" width="0" height="364"></canvas>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="grid gap-3 grid-cols-1 md:grid-cols-3 w-full md:min-h-[400px] py-4">
+                            <div class="md:col-span-2">
+                                <div class="p-4 bg-white dark:bg-slate-700 rounded shadow-sm w-full h-full">
+                                    <b class="flex flex-col text-gray-500 dark:text-slate-400 uppercase">REVENUE</b>
+                                    <canvas id="myChart2" width="0" height="360"></canvas>
+                                </div>
+                            </div>
+                            <div class="md:col-span-1">
+                                <div class="p-4 bg-white dark:bg-slate-700 rounded shadow-sm w-full h-full">
+                                    <b class="flex flex-col text-gray-500 dark:text-slate-400 uppercase">REVENUE BY LOCATION</b>
+                                    <canvas id="myChart3"></canvas>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="grid gap-3 grid-cols-1 md:grid-cols-4 w-full md:min-h-full py-4">
+                            <div class="md:col-span-2">
+                                <div class="flex flex-wrap w-full h-full">
+                                    <div class="w-full h-full">
+                                        <div class="p-4 bg-white rounded shadow-sm overflow-x-auto w-full h-full">
+                                            <b class="flex flex-col text-gray-500 dark:text-slate-400 uppercase">TOP SELLING
+                                                PRODUCTS</b>
+                                            <table class="table-auto w-full py-4 mt-4">
+                                                <thead></thead>
+                                                <tbody>
+                                                    <tr class="pt-3">
+                                                        <td class="text-left text-slate-500 text-sm py-5 px-2">
+                                                            ASOS Ridley High Waist
+                                                            <div class="text-slate-400 pt-1">07 April 2018</div>
+                                                        </td>
+                                                        <td class="text-left text-slate-500 text-sm py-5 px-2">
+                                                            $79.49
+                                                            <div class="text-slate-400 pt-1">Price</div>
+                                                        </td>
+                                                        <td class="text-left text-slate-500 text-sm py-5 px-2">
+                                                            82
+                                                            <div class="text-slate-400 pt-1">Quantity</div>
+                                                        </td>
+                                                        <td class="text-left text-slate-500 text-sm py-5 px-2">
+                                                            $6,518.18
+                                                            <div class="text-slate-400 pt-1">Amount</div>
+                                                        </td>
+                                                    </tr>
+                                                    <tr class="pt-3">
+                                                        <td class="text-left text-slate-500 text-sm py-5 px-2">
+                                                            Marco Lightweight Shirt
+                                                            <div class="text-slate-400 pt-1">25 March 2018</div>
+                                                        </td>
+                                                        <td class="text-left text-slate-500 text-sm py-5 px-2">
+                                                            $128.50
+                                                            <div class="text-slate-400 pt-1">Price</div>
+                                                        </td>
+                                                        <td class="text-left text-slate-500 text-sm py-5 px-2">
+                                                            37
+                                                            <div class="text-slate-400 pt-1">Quantity</div>
+                                                        </td>
+                                                        <td class="text-left text-slate-500 text-sm py-5 px-2">
+                                                            $4,754.50
+                                                            <div class="text-slate-400 pt-1">Amount</div>
+                                                        </td>
+                                                    </tr>
+                                                    <tr class="pt-3">
+                                                        <td class="text-left text-slate-500 text-sm py-5 px-2">
+                                                            Half Sleeve Shirt
+                                                            <div class="text-slate-400 pt-1">17 March 2018</div>
+                                                        </td>
+                                                        <td class="text-left text-slate-500 text-sm py-5 px-2">
+                                                            $39.99
+                                                            <div class="text-slate-400 pt-1">Price</div>
+                                                        </td>
+                                                        <td class="text-left text-slate-500 text-sm py-5 px-2">
+                                                            64
+                                                            <div class="text-slate-400 pt-1">Quantity</div>
+                                                        </td>
+                                                        <td class="text-left text-slate-500 text-sm py-5 px-2">
+                                                            $2,559.36
+                                                            <div class="text-slate-400 pt-1">Amount</div>
+                                                        </td>
+                                                    </tr>
+                                                    <tr class="pt-3">
+                                                        <td class="text-left text-slate-500 text-sm py-5 px-2">
+                                                            Marco Shoes
+                                                            <div class="text-slate-400 pt-1">05 March 2018</div>
+                                                        </td>
+                                                        <td class="text-left text-slate-500 text-sm py-5 px-2">
+                                                            $28.49
+                                                            <div class="text-slate-400 pt-1">Price</div>
+                                                        </td>
+                                                        <td class="text-left text-slate-500 text-sm py-5 px-2">
+                                                            69
+                                                            <div class="text-slate-400 pt-1">Quantity</div>
+                                                        </td>
+                                                        <td class="text-left text-slate-500 text-sm py-5 px-2">
+                                                            $1,965.81
+                                                            <div class="text-slate-400 pt-1">Amount</div>
+                                                        </td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="md:col-span-1">
+                                <div class="p-4 bg-white rounded shadow-sm w-full min-h-full">
+                                    <b class="flex flex-col text-gray-500 uppercase">TOTAL SALES</b>
+                                    <canvas id="myChart4"></canvas>
+                                </div>
+                            </div>
+                            <div class="md:col-span-1">
+                                <div class="p-4 bg-white rounded shadow-sm w-full h-[495px] overflow-y-hidden">
+                                    <b class="flex flex-col text-gray-500 uppercase">RECENT ACTIVITY</b>
+                                    <ul class="mt-4 relative">
+                                        <li
+                                            class="mb-4 flex before:absolute before:top-1 before:bottom-16 before:left-[10px] before:border before:border-gray-300">
+                                            <div class="mr-2 z-50">
+                                                <span class="rounded-full bg-blue-300 flex">
+                                                    <i
+                                                        class="fa-solid fa-user text-blue-500 pl-1.5 text-sm rounded-full h-6 w-6"></i>
+                                                </span>
+                                            </div>
+                                            <div>
+                                                <div class="text-slate-400 font-bold">You sold an item</div>
+                                                <div class="text-xs text-slate-500 py-2">Paul Burgess just purchased
+                                                    “Hyper - Admin Dashboard”!</div>
+                                                <div class="text-xs text-slate-400">5 minutes ago</div>
+                                            </div>
+                                        </li>
+                                        <li class="mb-4 flex">
+                                            <div class="mr-2 z-50">
+                                                <span class="rounded-full bg-blue-300 flex">
+                                                    <i
+                                                        class="fa-solid fa-user text-blue-500 pl-1.5 text-sm rounded-full h-6 w-6"></i>
+                                                </span>
+                                            </div>
+                                            <div>
+                                                <div class="text-slate-400 font-bold">You sold an item</div>
+                                                <div class="text-xs text-slate-500 py-2">Paul Burgess just purchased
+                                                    “Hyper - Admin Dashboard”!</div>
+                                                <div class="text-xs text-slate-400">5 minutes ago</div>
+                                            </div>
+                                        </li>
+                                        <li class="mb-4 flex">
+                                            <div class="mr-2 z-50">
+                                                <span class="rounded-full bg-blue-300 flex">
+                                                    <i
+                                                        class="fa-solid fa-user text-blue-500 pl-1.5 text-sm rounded-full h-6 w-6"></i>
+                                                </span>
+                                            </div>
+                                            <div>
+                                                <div class="text-slate-400 font-bold">You sold an item</div>
+                                                <div class="text-xs text-slate-500 py-2">Paul Burgess just purchased
+                                                    “Hyper - Admin Dashboard”!</div>
+                                                <div class="text-xs text-slate-400">5 minutes ago</div>
+                                            </div>
+                                        </li>
+                                        <li class="mb-4 flex">
+                                            <div class="mr-2 z-50">
+                                                <span class="rounded-full bg-blue-300 flex">
+                                                    <i
+                                                        class="fa-solid fa-user text-blue-500 pl-1.5 text-sm rounded-full h-6 w-6"></i>
+                                                </span>
+                                            </div>
+                                            <div>
+                                                <div class="text-slate-400 font-bold">You sold an item</div>
+                                                <div class="text-xs text-slate-500 py-2">Paul Burgess just purchased
+                                                    “Hyper - Admin Dashboard”!</div>
+                                                <div class="text-xs text-slate-400">5 minutes ago</div>
+                                            </div>
+                                        </li>
+                                        <li class="mb-4 flex">
+                                            <div class="mr-2 z-50">
+                                                <span class="rounded-full bg-blue-300 flex">
+                                                    <i
+                                                        class="fa-solid fa-user text-blue-500 pl-1.5 text-sm rounded-full h-6 w-6"></i>
+                                                </span>
+                                            </div>
+                                            <div>
+                                                <div class="text-slate-400 font-bold">You sold an item</div>
+                                                <div class="text-xs text-slate-500 py-2">Paul Burgess just purchased
+                                                    “Hyper - Admin Dashboard”!</div>
+                                                <div class="text-xs text-slate-400">5 minutes ago</div>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <footer class="text-slate-400 flex flex-col md:flex-row md:justify-between p-4 transition">
+                    <div>
+                        2022 © DevsHunt - DevsHunt.com
+                    </div>
+                    <div>
+                        <ul class="flex gap-7">
+                            <li>
+                                <a href="" class="transition hover:text-slate-600">About</a>
+                            </li>
+                            <li>
+                                <a href="" class="transition hover:text-slate-600">Support</a>
+                            </li>
+                            <li>
+                                <a href="" class="transition hover:text-slate-600">Contact Us</a>
+                            </li>
+                        </ul>
+                    </div>
+                </footer>
+            </main>
+            <!-- End Main Content -->
         </div>
         <!-- End Main Content -->
     </div>
-
-
-
+    <div
+        class="right-sidebar w-0 min-h-screen fixed top-0 right-0 bg-white text-left shadow-lg overflow-y-auto transition-all z-50">
+        <div class="bg-slate-800 p-6">
+            <div class="flex justify-between items-center ">
+                <div class="text-slate-50">
+                    Settings
+                </div>
+                <a
+                    class="icon-open flex justify-center items-center bg-slate-600 w-6 h-6 rounded-full cursor-pointer transition">
+                    <i id="icon-close" class="fas fa-times text-sm text-slate-50 icon-close"></i>
+                </a>
+            </div>
+        </div>
+        <div class="p-3">
+            <div class="py-3 border-b-2">
+                <h3 class="text-slate-800">Color Scheme</h3>
+            </div>
+            <div class="mt-4 flex items-center space-x-2">
+                <span class="text-sm text-gray-500">Light</span>
+                <div>
+                    <input type="checkbox" id="toggle" class="hidden" onclick="toggleMode()">
+                    <label for="toggle">
+                        <div class="w-9 h-5 flex items-center bg-gray-300 rounded-full p-1">
+                            <div class="toggle-dot w-4 h-4 bg-white rounded-full shadow-md transform transition"></div>
+                        </div>
+                    </label>
+                </div>
+                <span class="text-sm text-gray-400">Dark</span>
+            </div>
+        </div>
+    </div>
 
 
     <!-- Scripts -->
 
     <!-- Jquery -->
     <script src="./js/vendors/jquery/jquery-3.6.0.min.js"></script>
+
+    <!-- Chart Js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <!-- Datatable Js -->
+    <script src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
 
     <!-- Custom Script -->
     <script src="./js/main.js"></script>
